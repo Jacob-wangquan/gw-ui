@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue UI</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+    }
+
+    body {
+      font-size: var(--font-size);
+    }
+
+    #app {
+      margin: 20px;
+    }
+    .mb10 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="mb10">
+      <g-icon name="download"></g-icon>
+    </div>
+    <div class="mb10">
+      <g-button icon='settings' icon-position='left'>Button</g-button>
+      <g-button icon='settings' icon-position='right'>按钮</g-button>
+      <g-button icon='download' icon-position='right'>loading</g-button>
+      <g-button :loading="loading1" @click="loading1 = !loading1">
+        {{loading1 ? '停止loading' : '点我loading'}}
+      </g-button>
+      <g-button :loading="true" icon-position="right">Button</g-button>
+      <g-button>Button</g-button>
+    </div>
+    <div class="mb10">
+      <g-button-group>
+        <g-button icon='left' icon-position='left'>上一页</g-button>
+        <g-button icon='right' icon-position='right'>下一页</g-button>
+      </g-button-group>
+      <g-button-group>
+          <g-button icon='left' icon-position='left'>上一页</g-button>
+          <g-button>更多</g-button>
+          <g-button icon='right' icon-position='right'>下一页</g-button>
+        </g-button-group>
+    </div>
+    <div id="test"></div>
+  </div>
+  <script src="./src/app.js"></script>
+  <script src="//at.alicdn.com/t/font_1448379_meqmtmk8cvf.js"></script>
+</body>
+
+</html>
