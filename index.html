@@ -32,7 +32,7 @@
     #app {
       margin: 20px;
     }
-    .mb10 {
+    .box {
       margin-bottom: 10px;
     }
   </style>
@@ -40,10 +40,12 @@
 
 <body>
   <div id="app">
-    <div class="mb10">
+    <div class="box">
+      <p>icon</p>
       <g-icon name="download"></g-icon>
     </div>
-    <div class="mb10">
+    <div class="box">
+      <p>button</p>
       <g-button icon='settings' icon-position='left'>Button</g-button>
       <g-button icon='settings' icon-position='right'>按钮</g-button>
       <g-button icon='download' icon-position='right'>loading</g-button>
@@ -53,7 +55,8 @@
       <g-button :loading="true" icon-position="right">Button</g-button>
       <g-button>Button</g-button>
     </div>
-    <div class="mb10">
+    <div class="box">
+      <p>button-group</p>
       <g-button-group>
         <g-button icon='left' icon-position='left'>上一页</g-button>
         <g-button icon='right' icon-position='right'>下一页</g-button>
@@ -64,10 +67,19 @@
           <g-button icon='right' icon-position='right'>下一页</g-button>
         </g-button-group>
     </div>
+    <div class="box">
+      <p>input</p>
+      <g-input value="Jacob" v-model="message"></g-input>
+      {{message}}
+      <g-input value="disabled" disabled></g-input>
+      <g-input value="disabled" :disabled='true'></g-input>
+      <g-input value="readonly" readonly></g-input>
+      <g-input value="error" error="this is a error"></g-input>
+    </div>
     <div id="test"></div>
   </div>
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_1448379_meqmtmk8cvf.js"></script>
+  <script src="//at.alicdn.com/t/font_1448379_56yix8568fd.js"></script>
 </body>
 
 </html>
