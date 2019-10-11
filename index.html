@@ -35,6 +35,7 @@
     .box {
       margin-bottom: 10px;
     }
+    
   </style>
 </head>
 
@@ -75,6 +76,54 @@
       <g-input value="disabled" :disabled='true'></g-input>
       <g-input value="readonly" readonly></g-input>
       <g-input value="error" error="this is a error"></g-input>
+    </div>
+    <div class="box" style="border: 1px solid #666;">
+      <p>grid</p>
+      <p>对称的直接写</p>
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
+      </g-row>
+      <g-row>
+          <g-col>1</g-col>
+          <g-col>1</g-col>
+          <g-col>1</g-col>
+      </g-row>
+      <p>不对称的写span</p>
+      <g-row>
+          <g-col span="2">2</g-col>
+          <g-col span="22">22</g-col>
+      </g-row>
+      <p>靠左靠右align</p>
+      <g-row align="right">
+          <g-col span="2">2</g-col>
+          <g-col span="2">2</g-col>
+      </g-row>
+      <p>偏移 offset</p>
+      <g-row>
+          <g-col span="2">2</g-col>
+          <g-col span="20"  offset="2">span 20, offset 2</g-col>
+      </g-row>
+      <p>间隔 gutter</p>
+      <g-row gutter="20">
+          <g-col span="6">
+            <div>col-6</div>
+          </g-col>
+          <g-col span="6">
+            <div>col-6</div>
+          </g-col>
+      </g-row>
+      <g-row gutter="20">
+          <g-col>1</g-col>
+          <g-col>1</g-col>
+          <g-col>1</g-col>
+          <g-col>1</g-col>
+      </g-row>
+      <p>响应式</p>
+      <g-row gutter="20">
+          <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
+          <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
+      </g-row>
     </div>
     <div id="test"></div>
   </div>
