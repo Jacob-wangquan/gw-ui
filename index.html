@@ -32,15 +32,35 @@
     #app {
       margin: 20px;
     }
+
     .box {
       margin-bottom: 10px;
     }
-    
+
+    .demo {
+      height: 100px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
+    <div class="box">
+      <p>toast</p>
+      <g-button @click="showToast">显示toast</g-button>
+      <p>layout</p>
+      <g-layout style="height: 100vh;">
+        <g-header class="demo">header</g-header>
+        <g-layout>
+          <g-sider class="demo">sider</g-sider>
+          <g-content class="demo">
+            content
+          </g-content>
+        </g-layout>
+        <g-footer class="demo">footer</g-footer>
+      </g-layout>
+    </div>
     <div class="box">
       <p>icon</p>
       <g-icon name="download"></g-icon>
@@ -63,10 +83,10 @@
         <g-button icon='right' icon-position='right'>下一页</g-button>
       </g-button-group>
       <g-button-group>
-          <g-button icon='left' icon-position='left'>上一页</g-button>
-          <g-button>更多</g-button>
-          <g-button icon='right' icon-position='right'>下一页</g-button>
-        </g-button-group>
+        <g-button icon='left' icon-position='left'>上一页</g-button>
+        <g-button>更多</g-button>
+        <g-button icon='right' icon-position='right'>下一页</g-button>
+      </g-button-group>
     </div>
     <div class="box">
       <p>input</p>
@@ -85,44 +105,44 @@
         <g-col>1</g-col>
       </g-row>
       <g-row>
-          <g-col>1</g-col>
-          <g-col>1</g-col>
-          <g-col>1</g-col>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
       </g-row>
       <p>不对称的写span</p>
       <g-row>
-          <g-col span="2">2</g-col>
-          <g-col span="22">22</g-col>
+        <g-col span="2">2</g-col>
+        <g-col span="22">22</g-col>
       </g-row>
       <p>靠左靠右align</p>
       <g-row align="right">
-          <g-col span="2">2</g-col>
-          <g-col span="2">2</g-col>
+        <g-col span="2">2</g-col>
+        <g-col span="2">2</g-col>
       </g-row>
       <p>偏移 offset</p>
       <g-row>
-          <g-col span="2">2</g-col>
-          <g-col span="20"  offset="2">span 20, offset 2</g-col>
+        <g-col span="2">2</g-col>
+        <g-col span="20" offset="2">span 20, offset 2</g-col>
       </g-row>
       <p>间隔 gutter</p>
       <g-row gutter="20">
-          <g-col span="6">
-            <div>col-6</div>
-          </g-col>
-          <g-col span="6">
-            <div>col-6</div>
-          </g-col>
+        <g-col span="6">
+          <div>col-6</div>
+        </g-col>
+        <g-col span="6">
+          <div>col-6</div>
+        </g-col>
       </g-row>
       <g-row gutter="20">
-          <g-col>1</g-col>
-          <g-col>1</g-col>
-          <g-col>1</g-col>
-          <g-col>1</g-col>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
+        <g-col>1</g-col>
       </g-row>
       <p>响应式</p>
       <g-row gutter="20">
-          <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
-          <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
+        <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
+        <g-col span="12" :ipad="{span: 24}" :narrow-pc="{span: 12}">窄屏幕12 移动端24</g-col>
       </g-row>
     </div>
     <div id="test"></div>

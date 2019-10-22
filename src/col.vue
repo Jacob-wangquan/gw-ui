@@ -7,7 +7,6 @@
 <script>
 let validator = (value) => {
   let keys = Object.keys(value);
-  console.log(keys);
   let valid = true;
   keys.forEach(key => {
     if (!["span", "offset"].includes(key)) {
