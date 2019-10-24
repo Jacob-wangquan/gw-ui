@@ -47,8 +47,33 @@
 <body>
   <div id="app">
     <div class="box">
+      <p>tab</p>
+      <g-tabs :selected.sync="selectedTab">
+      <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
+        <g-tabs-head>
+          <template slot="actions">
+            <button>设置</button>
+          </template>
+          <g-tabs-item name="tab1"><g-icon name="settings"></g-icon>美食</g-tabs-item>
+          <g-tabs-item name="tab2">美景</g-tabs-item>
+          <g-tabs-item name="tab3" :disabled="true">美人</g-tabs-item>
+        </g-tabs-head>
+        <g-tabs-body>
+          <g-tabs-pane name="tab2">
+            美景美景
+          </g-tabs-pane>
+          <g-tabs-pane name="tab1">
+              美食美食
+          </g-tabs-pane>
+          <g-tabs-pane name="tab3" >
+            美人美人
+          </g-tabs-pane>
+        </g-tabs-body>
+      </g-tabs>
       <p>toast</p>
-      <g-button @click="showToast">显示toast</g-button>
+      <g-button @click="showToastTop">显示顶部toast</g-button>
+      <g-button @click="showToastMiddle">显示中间toast</g-button>
+      <g-button @click="showToastBottom">显示底部toast</g-button>
       <p>layout</p>
       <g-layout style="height: 100vh;">
         <g-header class="demo">header</g-header>

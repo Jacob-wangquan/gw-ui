@@ -11,6 +11,11 @@ import Header from './header'
 import Layout from './layout'
 import Sider from './sider'
 import Toast from './toast'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 import plugin from './plugin'
 
 Vue.component('g-button', Button)
@@ -25,6 +30,11 @@ Vue.component('g-header', Header)
 Vue.component('g-layout', Layout)
 Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
 
 Vue.use(plugin)
 
@@ -32,7 +42,8 @@ new Vue({
   el: '#app',
   data: {
     loading1: false,
-    message: 'hello'
+    message: 'hello',
+    selectedTab: 'tab1'
   },
   created() {
    
@@ -42,16 +53,46 @@ new Vue({
       console.log(e.target.value);
     },
 
-    showToast() {
+    showToastTop() {
       // this.$toast('hello');
       // 也可以传入自定义选项
-      this.$toast('message', {
+      this.$toast('点击了toast', {
         closeButton: {
           text: '晓得了',
           callback() {
             console.log('I know');
           }
-        }
+        },
+        enableHtml: false,
+        position: 'top'
+      });
+    },
+    showToastMiddle() {
+      // this.$toast('hello');
+      // 也可以传入自定义选项
+      this.$toast('点击了toast', {
+        closeButton: {
+          text: '晓得了',
+          callback() {
+            console.log('I know');
+          }
+        },
+        enableHtml: false,
+        position: 'middle'
+      });
+    },
+    showToastBottom() {
+      // this.$toast('hello');
+      // 也可以传入自定义选项
+      this.$toast('点击了toast', {
+        closeButton: {
+          text: '晓得了',
+          callback() {
+            console.log('I know');
+          }
+        },
+        enableHtml: false,
+        position: 'bottom'
       });
     }
   }
