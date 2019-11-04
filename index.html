@@ -46,20 +46,47 @@
 
 <body>
   <div id="app">
-    <div class="box" style="overflow: hidden;">
+    <div class="box">
+      <p>Collapse</p>
+      <g-collapse :selected.sync="selectedCollapse">
+        <g-collapse-item title="Collapse1" name="0">Collapse1</g-collapse-item>
+        <g-collapse-item title="Collapse2" name="1">Collapse2</g-collapse-item>
+        <g-collapse-item title="Collapse3" name="2">Collapse3</g-collapse-item>
+      </g-collapse>
+      选中的项：{{selectedCollapse}}
+    </div>
+    <div class="box" style="overflow: hidden;padding-top: 50px;">
       <p>popover</p>
-      <g-popover>
+      <g-popover position='bottom'>
         <template slot="content">
           <div>popover1 内容</div>
         </template>
-        <button>点我</button>
+        <g-button>点我 bottom</g-button>
       </g-popover>
-      <g-popover>
+      <g-popover position="top">
           <template slot="content">
             <div>popover2 内容</div>
           </template>
-          <button>点我</button>
-        </g-popover>
+          <g-button>点我 top</g-button>
+      </g-popover>
+      <g-popover position="left">
+        <template slot="content">
+          <div>popover2 内容</div>
+        </template>
+        <g-button>点我 left</g-button>
+      </g-popover>
+      <g-popover position="right">
+        <template slot="content">
+          <div>popover2 内容</div>
+        </template>
+        <g-button>点我 right</g-button>
+      </g-popover>
+      <g-popover position="top" trigger="hover">
+        <template slot="content">
+          <div>popover2 内容</div>
+        </template>
+        <g-button>hover我 top</g-button>
+      </g-popover>
       <p>tab</p>
       <g-tabs :selected.sync="selectedTab">
       <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
